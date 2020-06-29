@@ -21,6 +21,7 @@ namespace IndyBeerNavigator.Data.Entities
         public string Review { get; set; }
         public virtual ICollection<Beer> Beers { get; set; } = new List<Beer>();
         public virtual ICollection<Sale> Sales { get; set; } = new List<Sale>();
+        public virtual ICollection<BreweryReview> BreweryReviews { get; set; } = new List<BreweryReview();>
 
     }
 }

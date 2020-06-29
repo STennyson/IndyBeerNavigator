@@ -8,19 +8,19 @@ using System.Threading.Tasks;
 
 namespace IndyBeerNavigator.Data.Entities
 {
-    public class Beer
+    public class BreweryReview
     {
         [Key]
-        public int BeerId { get; set; }
+        public int Id { get; set; }
         [Required]
-        public string Name { get; set; }
+        public Guid OwnerId { get; set; }
         [Required]
-        public string Style { get; set; }
-        public bool CannedOrBottled { get; set; }
-        public virtual ICollection<BeerReview> BeerReviews { get; set; } = new List<BeerReview>();
+        [MaxLength(500, ErrorMessage = "There are too many characters in this field.")]
+        public string Review { get; set; }
+        [Required]
+        public double Rating { get; set; }
         [ForeignKey(nameof(Brewery))]
         public int BreweryId { get; set; }
         public virtual Brewery Brewery { get; set; }
-        
     }
 }
