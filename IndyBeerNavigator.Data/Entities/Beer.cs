@@ -17,7 +17,6 @@ namespace IndyBeerNavigator.Data.Entities
         [Required]
         public string Style { get; set; }
         public bool CannedOrBottled { get; set; }
-        public virtual ICollection<BeerReview> BeerReviews { get; set; } = new List<BeerReview>();
         [ForeignKey(nameof(Brewery))]
         public int BreweryId { get; set; }
         public virtual Brewery Brewery { get; set; }
