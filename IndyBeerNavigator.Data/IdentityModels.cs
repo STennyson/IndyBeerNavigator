@@ -36,6 +36,9 @@ namespace IndyBeerNavigator.Data
         public DbSet<Brewery> Breweries { get; set; }
         public DbSet<Beer> Beers { get; set; }
         public DbSet<Sale> Sales { get; set; }
+        public DbSet<BreweryReview> BreweryReviews { get; set; }
+        public DbSet<BeerReview> BeerReviews { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
