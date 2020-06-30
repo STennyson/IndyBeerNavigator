@@ -54,7 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BreweryListItem.cs" />
+    <Compile Include="BeerModels\BeerListItem.cs" />
+    <Compile Include="BreweryModels\BreweryListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -66,6 +67,11 @@
       <Project>{D83EF7B4-050D-491C-BB16-B1141D073EFC}</Project>
       <Name>IndyBeerNavigator.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BeerReviewModels\" />
+    <Folder Include="BreweryReviewModels\" />
+    <Folder Include="SaleModels\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
