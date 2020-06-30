@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BeerModels\BeerCreate.cs" />
+    <Compile Include="BeerModels\BeerDetail.cs" />
     <Compile Include="BeerModels\BeerListItem.cs" />
     <Compile Include="BreweryModels\BreweryCreate.cs" />
     <Compile Include="BreweryModels\BreweryDetail.cs" />

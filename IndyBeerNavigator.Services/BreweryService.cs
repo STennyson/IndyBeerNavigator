@@ -49,6 +49,8 @@ namespace IndyBeerNavigator.Services
         public BreweryDetail GetBreweryById(int breweryId)
         {
             var breweryEntity = _context.Breweries.Find(breweryId);
+            if (breweryEntity == null)
+                return null;
             var breweryDetail = new BreweryDetail
             {
                 BreweryId = breweryEntity.BreweryId,
