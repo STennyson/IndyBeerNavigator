@@ -1,24 +1,21 @@
-﻿using System;
+﻿using IndyBeerNavigator.Data.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IndyBeerNavigator.Data.Entities
+namespace IndyBeerNavigator.Models.BreweryModels
 {
-    public class Brewery
+    public class BreweryDetail
     {
-        [Key]
         public int BreweryId { get; set; }
-        [Required]
         public string Name { get; set; }
-        [Required]
         public string Address { get; set; }
+        [Display(Name = "Carryout Options")]
         public string Carryout { get; set; }
-        public double Rating { get; }
-        public virtual ICollection<Beer> Beers { get; set; } = new List<Beer>();
-        public virtual ICollection<Sale> Sales { get; set; } = new List<Sale>();
-
+        public ICollection<Beer> Beers { get; set; }
+        public ICollection<Sale> Sales { get; set; }
     }
 }

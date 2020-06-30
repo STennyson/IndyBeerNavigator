@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BreweryService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IndyBeerNavigator.Data\IndyBeerNavigator.Data.csproj">
+      <Project>{D83EF7B4-050D-491C-BB16-B1141D073EFC}</Project>
+      <Name>IndyBeerNavigator.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IndyBeerNavigator.Models\IndyBeerNavigator.Models.csproj">
+      <Project>{2B0895F5-FA5E-47CE-9E89-C5CC1382D02E}</Project>
+      <Name>IndyBeerNavigator.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,20 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IndyBeerNavigator.Data.Entities
+namespace IndyBeerNavigator.Models.BreweryModels
 {
-    public class Brewery
+    public class BreweryCreate
     {
-        [Key]
-        public int BreweryId { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
         public string Address { get; set; }
+        [Display(Name = "Carryout Options")]
         public string Carryout { get; set; }
         public double Rating { get; }
-        public virtual ICollection<Beer> Beers { get; set; } = new List<Beer>();
-        public virtual ICollection<Sale> Sales { get; set; } = new List<Sale>();
-
     }
 }

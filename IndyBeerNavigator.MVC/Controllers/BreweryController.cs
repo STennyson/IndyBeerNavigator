@@ -16,5 +16,11 @@ namespace IndyBeerNavigator.MVC.Controllers
             var model = new BreweryListItem[0];
             return View(model);
         }
+
+        // GET
+        public ActionResult Create()
+        {
+            return View();
+        }
     }
 }
