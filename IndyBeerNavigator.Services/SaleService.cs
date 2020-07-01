@@ -28,10 +28,10 @@ namespace IndyBeerNavigator.Services
         }
 
         // GET ALL
-        public List<SaleDetail> GetAllSales()
+        public List<SaleListItem> GetAllSales()
         {
             var saleEntities = _context.Sales.ToList();
-            var saleList = saleEntities.Select(b => new SaleDetail
+            var saleList = saleEntities.Select(b => new SaleListItem
             {
                 SaleId = b.SaleId,
                 DayOfTheWeek = b.DayOfTheWeek,

@@ -14,11 +14,11 @@ namespace IndyBeerNavigator.Services
     public class BreweryService
     {
         private readonly ApplicationDbContext _context = new ApplicationDbContext();
-
+        
         // CREATE
         public bool CreateBrewery(BreweryCreate model)
         {
-            Brewery entity = new Brewery
+            var entity = new Brewery
             {
                 Name = model.Name,
                 Address = model.Address,
@@ -30,17 +30,15 @@ namespace IndyBeerNavigator.Services
         }
         
         // GET ALL
-        public List<BreweryDetail> GetAllBreweries()
+        public List<BreweryListItem> GetAllBreweries()
         {
             var breweryEntities = _context.Breweries.ToList();
-            var breweryList = breweryEntities.Select(b => new BreweryDetail
+            var breweryList = breweryEntities.Select(b => new BreweryListItem
             {
                 BreweryId = b.BreweryId,
                 Name = b.Name,
                 Address = b.Address,
-                Carryout = b.Carryout,
-                Beers = b.Beers,
-                Sales = b.Sales
+                Carryout = b.Carryout
             }).ToList();
             return breweryList;
         }

@@ -29,15 +29,16 @@ namespace IndyBeerNavigator.Services
         }
 
         // GET ALL
-        public List<BeerDetail> GetAllBeers()
+        public List<BeerListItem> GetAllBeers()
         {
             var beerEntities = _context.Beers.ToList();
-            var beerList = beerEntities.Select(b => new BeerDetail
+            var beerList = beerEntities.Select(b => new BeerListItem
             {
                 BeerId = b.BeerId,
                 Name = b.Name,
                 Style = b.Style,
                 CannedOrBottled = b.CannedOrBottled,
+                BreweryId = b.BreweryId,
                 Brewery = b.Brewery
             }).ToList();
             return beerList;

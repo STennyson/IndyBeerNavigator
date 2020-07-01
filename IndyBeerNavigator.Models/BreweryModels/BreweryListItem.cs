@@ -15,7 +15,5 @@ namespace IndyBeerNavigator.Models
         public string Address { get; set; }
         [Display(Name = "Carryout Options")]
         public string Carryout { get; set; }
-        public ICollection<Beer> Beers { get; set; }
-        public ICollection<Sale> Sales { get; set; }
     }
 }
