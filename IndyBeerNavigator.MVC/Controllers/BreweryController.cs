@@ -1,4 +1,5 @@
 ﻿using IndyBeerNavigator.Models;
+using IndyBeerNavigator.Models.BreweryModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,17 @@ namespace IndyBeerNavigator.MVC.Controllers
         public ActionResult Create()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(BreweryCreate model)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            return View(model);
         }
     }
 }
