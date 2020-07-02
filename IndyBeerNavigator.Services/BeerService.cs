@@ -61,5 +61,17 @@ namespace IndyBeerNavigator.Services
             };
             return beerDetail;
         }
+
+        // UPDATE
+        public bool UpdateBeer(BeerEdit model)
+        {
+            var beerEntity = _context.Beers.Find(model.BeerId);
+
+            beerEntity.Name = model.Name;
+            beerEntity.Style = model.Style;
+            beerEntity.CannedOrBottled = model.CannedOrBottled;
+
+            return _context.SaveChanges() == 1;
+        }
     }
 }

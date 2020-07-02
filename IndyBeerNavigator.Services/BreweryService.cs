@@ -61,5 +61,17 @@ namespace IndyBeerNavigator.Services
             };
             return breweryDetail;
         }
+
+        // UPDATE
+        public bool UpdateBrewery(BreweryEdit model)
+        {
+            var breweryEntity = _context.Breweries.Find(model.BreweryId);
+
+            breweryEntity.Name = model.Name;
+            breweryEntity.Address = model.Address;
+            breweryEntity.Carryout = model.Carryout;
+
+            return _context.SaveChanges() == 1;
+        }
     }
 }

@@ -59,5 +59,16 @@ namespace IndyBeerNavigator.Services
             };
             return saleDetail;
         }
+
+        // UPDATE
+        public bool UpdateSale(SaleEdit model)
+        {
+            var saleEntity = _context.Sales.Find(model.SaleId);
+
+            saleEntity.DayOfTheWeek = model.DayOfTheWeek;
+            saleEntity.SalePrice = model.SalePrice;
+
+            return _context.SaveChanges() == 1;
+        }
     }
 }

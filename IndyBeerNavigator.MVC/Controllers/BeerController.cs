@@ -52,5 +52,19 @@ namespace IndyBeerNavigator.MVC.Controllers
 
             return View(model);
         }
+
+        // EDIT: Beer/{id}
+        public ActionResult Edit(int id)
+        {
+            var detail = _service.GetBeerById(id);
+            var model =
+                new BeerEdit
+                {
+                    Name = detail.Name,
+                    Style = detail.Style,
+                    CannedOrBottled = detail.CannedOrBottled
+                };
+            return View(model);
+        }
     }
 }
