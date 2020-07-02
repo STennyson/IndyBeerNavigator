@@ -49,6 +49,7 @@ namespace IndyBeerNavigator.Services
             var breweryEntity = _context.Breweries.Find(breweryId);
             if (breweryEntity == null)
                 return null;
+
             var breweryDetail = new BreweryDetail
             {
                 BreweryId = breweryEntity.BreweryId,
@@ -60,6 +61,5 @@ namespace IndyBeerNavigator.Services
             };
             return breweryDetail;
         }
-        
     }
 }

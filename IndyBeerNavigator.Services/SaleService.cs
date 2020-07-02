@@ -48,6 +48,7 @@ namespace IndyBeerNavigator.Services
             var saleEntity = _context.Sales.Find(saleId);
             if (saleEntity == null)
                 return null;
+
             var saleDetail = new SaleDetail
             {
                 SaleId = saleEntity.SaleId,

@@ -21,7 +21,7 @@ namespace IndyBeerNavigator.MVC.Controllers
             return View(model);
         }
 
-        // GET
+        // GET: Brewery/Create
         public ActionResult Create()
         {
             return View();
@@ -46,7 +46,7 @@ namespace IndyBeerNavigator.MVC.Controllers
             ModelState.AddModelError("", "Brewery could not be created.");
             return View(model);
         }
-
+        // GET: Brewery/{id}
         public ActionResult Details(int id)
         {
             var model = _service.GetBreweryById(id);
