@@ -1,0 +1,50 @@
+﻿@model IndyBeerNavigator.Models.SaleModels.SaleDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SaleDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SaleId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SaleId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DayOfTheWeek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DayOfTheWeek)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SalePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SalePrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BreweryId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BreweryId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
