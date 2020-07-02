@@ -59,9 +59,32 @@ namespace IndyBeerNavigator.MVC.Controllers
             var model =
                 new SaleEdit
                 {
+                    SaleId = detail.SaleId,
                     DayOfTheWeek = detail.DayOfTheWeek,
                     SalePrice = detail.SalePrice,
                 };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, SaleEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.SaleId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            if (_service.UpdateSale(model))
+            {
+                TempData["SaveResult"] = "Your sale was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your sale could not be updated.");
             return View(model);
         }
     }

@@ -55,16 +55,39 @@ namespace IndyBeerNavigator.MVC.Controllers
         }
 
         // EDIT: Brewery/{id}
-        public ActionResult Edit (int id)
+        public ActionResult Edit(int id)
         {
             var detail = _service.GetBreweryById(id);
             var model =
                 new BreweryEdit
                 {
+                    BreweryId = detail.BreweryId,
                     Name = detail.Name,
                     Address = detail.Address,
                     Carryout = detail.Carryout
                 };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, BreweryEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.BreweryId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            if (_service.UpdateBrewery(model))
+            {
+                TempData["SaveResult"] = "Your brewery was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your brewery could not be updated.");
             return View(model);
         }
     }

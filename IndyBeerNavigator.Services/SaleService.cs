@@ -65,6 +65,7 @@ namespace IndyBeerNavigator.Services
         {
             var saleEntity = _context.Sales.Find(model.SaleId);
 
+            saleEntity.SaleId = model.SaleId;
             saleEntity.DayOfTheWeek = model.DayOfTheWeek;
             saleEntity.SalePrice = model.SalePrice;
 

@@ -67,6 +67,7 @@ namespace IndyBeerNavigator.Services
         {
             var beerEntity = _context.Beers.Find(model.BeerId);
 
+            beerEntity.BeerId = model.BeerId;
             beerEntity.Name = model.Name;
             beerEntity.Style = model.Style;
             beerEntity.CannedOrBottled = model.CannedOrBottled;

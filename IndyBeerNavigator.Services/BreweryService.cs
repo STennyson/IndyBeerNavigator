@@ -67,6 +67,7 @@ namespace IndyBeerNavigator.Services
         {
             var breweryEntity = _context.Breweries.Find(model.BreweryId);
 
+            breweryEntity.BreweryId = model.BreweryId;
             breweryEntity.Name = model.Name;
             breweryEntity.Address = model.Address;
             breweryEntity.Carryout = model.Carryout;

@@ -60,10 +60,33 @@ namespace IndyBeerNavigator.MVC.Controllers
             var model =
                 new BeerEdit
                 {
+                    BeerId = detail.BeerId,
                     Name = detail.Name,
                     Style = detail.Style,
                     CannedOrBottled = detail.CannedOrBottled
                 };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, BeerEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.BeerId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            if (_service.UpdateBeer(model))
+            {
+                TempData["SaveResult"] = "Your beer was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your beer could not be updated.");
             return View(model);
         }
     }

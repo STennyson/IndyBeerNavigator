@@ -246,6 +246,9 @@
     <Content Include="Views\Brewery\Details.cshtml" />
     <Content Include="Views\Sale\Details.cshtml" />
     <Content Include="Views\Beer\Details.cshtml" />
+    <Content Include="Views\Brewery\Edit.cshtml" />
+    <Content Include="Views\Beer\Edit.cshtml" />
+    <Content Include="Views\Sale\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
