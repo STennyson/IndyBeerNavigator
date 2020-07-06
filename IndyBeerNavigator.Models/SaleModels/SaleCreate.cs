@@ -17,6 +17,6 @@ namespace IndyBeerNavigator.Models.SaleModels
         public string SalePrice { get; set; }
         [ForeignKey(nameof(Brewery))]
         public int BreweryId { get; set; }
-        public Brewery Brewery { get; set; }
+        public virtual Brewery Brewery { get; set; }
     }
 }

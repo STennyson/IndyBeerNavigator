@@ -20,7 +20,8 @@ namespace IndyBeerNavigator.Services
             {
                 DayOfTheWeek = model.DayOfTheWeek,
                 SalePrice = model.SalePrice,
-                BreweryId = model.BreweryId
+                BreweryId = model.BreweryId,
+                Brewery = model.Brewery
             };
 
             _context.Sales.Add(entity);
@@ -68,6 +69,7 @@ namespace IndyBeerNavigator.Services
             saleEntity.SaleId = model.SaleId;
             saleEntity.DayOfTheWeek = model.DayOfTheWeek;
             saleEntity.SalePrice = model.SalePrice;
+            saleEntity.BreweryId = model.BreweryId;
 
             return _context.SaveChanges() == 1;
         }
