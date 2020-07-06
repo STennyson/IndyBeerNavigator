@@ -51,9 +51,9 @@
                     @Html.DisplayFor(modelItem => item.Carryout)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.BreweryId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.BreweryId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.BreweryId })
+                    @Html.ActionLink("Change", "Edit", new { id = item.BreweryId }) |
+                    @Html.ActionLink("Specifics", "Details", new { id = item.BreweryId }) |
+                    @Html.ActionLink("Remove", "Delete", new { id = item.BreweryId })
                 </td>
             </tr>
         }

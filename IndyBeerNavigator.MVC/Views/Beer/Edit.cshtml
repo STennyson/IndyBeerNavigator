@@ -4,7 +4,7 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Modify This Beer</h2>
 
 
 @using (Html.BeginForm())
@@ -12,7 +12,6 @@
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>BeerEdit</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.BeerId)
@@ -43,8 +42,15 @@
         </div>
     </div>
 
-    @Html.HiddenFor(model => model.BreweryId)
-    @Html.HiddenFor(model => model.Brewery)
+    <div class="form-group">
+        @Html.LabelFor(model => model.BreweryId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.BreweryId)
+                @Html.ValidationMessageFor(model => model.BreweryId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">

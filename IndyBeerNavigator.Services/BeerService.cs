@@ -74,7 +74,6 @@ namespace IndyBeerNavigator.Services
             beerEntity.Style = model.Style;
             beerEntity.CannedOrBottled = model.CannedOrBottled;
             beerEntity.BreweryId = model.BreweryId;
-            beerEntity.Brewery = model.Brewery;
 
             return _context.SaveChanges() == 1;
         }
