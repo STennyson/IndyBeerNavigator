@@ -17,6 +17,6 @@ namespace IndyBeerNavigator.Models.BeerModels
         public bool CannedOrBottled { get; set; }
         [ForeignKey(nameof(Brewery))]
         public int BreweryId { get; set; }
-        public Brewery Brewery { get; set; }
+        public virtual Brewery Brewery { get; set; }
     }
 }

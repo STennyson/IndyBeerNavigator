@@ -21,7 +21,8 @@ namespace IndyBeerNavigator.Services
                 Name = model.Name,
                 Style = model.Style,
                 CannedOrBottled = model.CannedOrBottled,
-                BreweryId = model.BreweryId
+                BreweryId = model.BreweryId,
+                Brewery = model.Brewery
             };
 
             _context.Beers.Add(entity);
@@ -57,6 +58,7 @@ namespace IndyBeerNavigator.Services
                 Name = beerEntity.Name,
                 Style = beerEntity.Style,
                 CannedOrBottled = beerEntity.CannedOrBottled,
+                BreweryId = beerEntity.BreweryId,
                 Brewery = beerEntity.Brewery
             };
             return beerDetail;
@@ -71,6 +73,18 @@ namespace IndyBeerNavigator.Services
             beerEntity.Name = model.Name;
             beerEntity.Style = model.Style;
             beerEntity.CannedOrBottled = model.CannedOrBottled;
+            beerEntity.BreweryId = model.BreweryId;
+            beerEntity.Brewery = model.Brewery;
+
+            return _context.SaveChanges() == 1;
+        }
+
+        // DELETE
+        public bool DeleteBeer(int beerId)
+        {
+            var entity = _context.Beers.Find(beerId);
+
+            _context.Beers.Remove(entity);
 
             return _context.SaveChanges() == 1;
         }

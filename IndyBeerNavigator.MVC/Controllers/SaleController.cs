@@ -87,5 +87,24 @@ namespace IndyBeerNavigator.MVC.Controllers
             ModelState.AddModelError("", "Your sale could not be updated.");
             return View(model);
         }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var model = _service.GetSaleById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult RemoveSale(int id)
+        {
+            _service.DeleteSale(id);
+
+            TempData["SaveResult"] = "Your sale was removed.";
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -72,6 +72,14 @@
     <Compile Include="Migrations\202007011317007_secondMigration.Designer.cs">
       <DependentUpon>202007011317007_secondMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007061306501_removedBeerRating.cs" />
+    <Compile Include="Migrations\202007061306501_removedBeerRating.Designer.cs">
+      <DependentUpon>202007061306501_removedBeerRating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007061437584_thirdMigration.cs" />
+    <Compile Include="Migrations\202007061437584_thirdMigration.Designer.cs">
+      <DependentUpon>202007061437584_thirdMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -88,6 +96,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007011317007_secondMigration.resx">
       <DependentUpon>202007011317007_secondMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007061306501_removedBeerRating.resx">
+      <DependentUpon>202007061306501_removedBeerRating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007061437584_thirdMigration.resx">
+      <DependentUpon>202007061437584_thirdMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

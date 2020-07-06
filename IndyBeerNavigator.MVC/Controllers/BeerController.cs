@@ -63,7 +63,9 @@ namespace IndyBeerNavigator.MVC.Controllers
                     BeerId = detail.BeerId,
                     Name = detail.Name,
                     Style = detail.Style,
-                    CannedOrBottled = detail.CannedOrBottled
+                    CannedOrBottled = detail.CannedOrBottled,
+                    BreweryId = detail.BreweryId,
+                    Brewery = detail.Brewery
                 };
             return View(model);
         }
@@ -88,6 +90,25 @@ namespace IndyBeerNavigator.MVC.Controllers
 
             ModelState.AddModelError("", "Your beer could not be updated.");
             return View(model);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var model = _service.GetBeerById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult RemoveBeer(int id)
+        {
+            _service.DeleteBeer(id);
+
+            TempData["SaveResult"] = "Your beer was deleted.";
+            return RedirectToAction("Index");
         }
     }
 }

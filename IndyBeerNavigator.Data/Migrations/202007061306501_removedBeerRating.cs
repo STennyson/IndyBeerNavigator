@@ -1,0 +1,18 @@
+namespace IndyBeerNavigator.Data.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class removedBeerRating : DbMigration
+    {
+        public override void Up()
+        {
+            DropColumn("dbo.Beer", "Rating");
+        }
+        
+        public override void Down()
+        {
+            AddColumn("dbo.Beer", "Rating", c => c.Double(nullable: false));
+        }
+    }
+}

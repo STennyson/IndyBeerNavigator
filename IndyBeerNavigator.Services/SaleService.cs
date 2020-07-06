@@ -71,5 +71,15 @@ namespace IndyBeerNavigator.Services
 
             return _context.SaveChanges() == 1;
         }
+
+        // DELETE
+        public bool DeleteSale(int saleId)
+        {
+            var entity = _context.Sales.Find(saleId);
+
+                _context.Sales.Remove(entity);
+
+                return _context.SaveChanges() == 1;
+        }
     }
 }

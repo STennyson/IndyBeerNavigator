@@ -90,5 +90,24 @@ namespace IndyBeerNavigator.MVC.Controllers
             ModelState.AddModelError("", "Your brewery could not be updated.");
             return View(model);
         }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var model = _service.GetBreweryById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult RemoveBrewery(int id)
+        {
+            _service.DeleteBrewery(id);
+
+            TempData["SaveResult"] = "Your brewery was removed.";
+            return RedirectToAction("Index");
+        }
     }
 }
