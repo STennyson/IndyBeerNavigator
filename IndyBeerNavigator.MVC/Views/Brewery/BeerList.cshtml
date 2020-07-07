@@ -8,15 +8,15 @@
 
 @foreach (var item in Model)
 {
-    <div>
-        @item.Name
-        <hr />
-    </div>
+<div>
+    <hr />
+    @item.Name
+    &emsp;
+    &emsp;
+    @item.Style
+    <hr />
+</div>
 
-    <div>
-        @item.Style
-        <hr />
-    </div>
 }
 <p>
     @Html.ActionLink("Back to List", "Index")

@@ -64,6 +64,15 @@ namespace IndyBeerNavigator.MVC.Controllers
             return View(model);
         }
 
+        // GET: Brewery/SaleList/{id}
+        [HttpGet]
+        public ActionResult SaleList(int id)
+        {
+            var model = _service.GetSalesByBrewery(id);
+
+            return View(model);
+        }
+
         // EDIT: Brewery/{id}
         public ActionResult Edit(int id)
         {
