@@ -20,6 +20,9 @@ namespace IndyBeerNavigator.Services
             {
                 Name = model.Name,
                 Style = model.Style,
+                ABV = model.ABV,
+                IBUs = model.IBUs,
+                SRM = model.SRM,
                 CannedOrBottled = model.CannedOrBottled,
                 BreweryId = model.BreweryId,
                 Brewery = model.Brewery
@@ -38,6 +41,9 @@ namespace IndyBeerNavigator.Services
                 BeerId = b.BeerId,
                 Name = b.Name,
                 Style = b.Style,
+                ABV = b.ABV,
+                IBUs = b.IBUs,
+                SRM = b.SRM,
                 CannedOrBottled = b.CannedOrBottled,
                 BreweryId = b.BreweryId,
                 Brewery = b.Brewery
@@ -57,6 +63,9 @@ namespace IndyBeerNavigator.Services
                 BeerId = beerEntity.BeerId,
                 Name = beerEntity.Name,
                 Style = beerEntity.Style,
+                ABV = beerEntity.ABV,
+                IBUs = beerEntity.IBUs,
+                SRM = beerEntity.SRM,
                 CannedOrBottled = beerEntity.CannedOrBottled,
                 BreweryId = beerEntity.BreweryId,
                 Brewery = beerEntity.Brewery
@@ -72,6 +81,9 @@ namespace IndyBeerNavigator.Services
             beerEntity.BeerId = model.BeerId;
             beerEntity.Name = model.Name;
             beerEntity.Style = model.Style;
+            beerEntity.ABV = model.ABV;
+            beerEntity.IBUs = model.IBUs;
+            beerEntity.SRM = model.SRM;
             beerEntity.CannedOrBottled = model.CannedOrBottled;
             beerEntity.BreweryId = model.BreweryId;
 

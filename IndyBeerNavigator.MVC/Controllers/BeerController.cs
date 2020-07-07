@@ -63,6 +63,9 @@ namespace IndyBeerNavigator.MVC.Controllers
                     BeerId = detail.BeerId,
                     Name = detail.Name,
                     Style = detail.Style,
+                    ABV = detail.ABV,
+                    IBUs = detail.IBUs,
+                    SRM = detail.SRM,
                     CannedOrBottled = detail.CannedOrBottled,
                     BreweryId = detail.BreweryId
                 };
