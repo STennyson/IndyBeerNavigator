@@ -252,6 +252,7 @@
     <Content Include="Views\Sale\Delete.cshtml" />
     <Content Include="Views\Beer\Delete.cshtml" />
     <Content Include="Views\Brewery\Delete.cshtml" />
+    <Content Include="Views\Brewery\BeerList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

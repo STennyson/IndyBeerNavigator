@@ -42,7 +42,17 @@
             @Html.DisplayFor(model => model.Carryout)
         </dd>
 
+        <dt>
+            @Html.ActionLink("See Beers", "BeerList", new { id = Model.BreweryId })
+        </dt>
+
+        <dt>
+            @Html.ActionLink("See Sales", "SaleList", new { id = Model.BreweryId })
+        </dt>
+
     </dl>
+    <hr />
+    <hr />
 </div>
 <p>
     @Html.ActionLink("Modify", "Edit", new { id = Model.BreweryId }) |

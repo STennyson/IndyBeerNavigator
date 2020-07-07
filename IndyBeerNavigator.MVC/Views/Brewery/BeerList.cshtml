@@ -1,0 +1,23 @@
+﻿@model IEnumerable<IndyBeerNavigator.Data.Entities.Beer>
+
+@{
+    ViewBag.Title = "BeerList";
+}
+
+<h2>This Brewery's Beers</h2>
+
+@foreach (var item in Model)
+{
+    <div>
+        @item.Name
+        <hr />
+    </div>
+
+    <div>
+        @item.Style
+        <hr />
+    </div>
+}
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

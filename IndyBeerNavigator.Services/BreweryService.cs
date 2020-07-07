@@ -56,11 +56,24 @@ namespace IndyBeerNavigator.Services
                 Name = breweryEntity.Name,
                 Address = breweryEntity.Address,
                 Carryout = breweryEntity.Carryout,
-                Beers = breweryEntity.Beers,
-                Sales = breweryEntity.Sales
             };
             return breweryDetail;
         }
+
+        // GET (Beers by Brewery)
+        public List<Beer> GetBeersByBrewery(int breweryId)
+        {
+            var breweryEntity = _context.Breweries.Find(breweryId);
+
+            List<Beer> brews = new List<Beer>();
+            foreach (var beerItem in breweryEntity.Beers)
+            {
+                brews.Add(beerItem);
+            }
+
+            return brews;
+        }
+
 
         // UPDATE
         public bool UpdateBrewery(BreweryEdit model)

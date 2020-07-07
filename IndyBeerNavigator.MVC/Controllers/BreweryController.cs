@@ -1,4 +1,5 @@
-﻿using IndyBeerNavigator.Models;
+﻿using IndyBeerNavigator.Data.Entities;
+using IndyBeerNavigator.Models;
 using IndyBeerNavigator.Models.BreweryModels;
 using IndyBeerNavigator.Services;
 using System;
@@ -50,6 +51,15 @@ namespace IndyBeerNavigator.MVC.Controllers
         public ActionResult Details(int id)
         {
             var model = _service.GetBreweryById(id);
+
+            return View(model);
+        }
+
+        // GET: Brewery/BeerList/{id}
+        [HttpGet]
+        public ActionResult BeerList(int id)
+        {
+            var model = _service.GetBeersByBrewery(id);
 
             return View(model);
         }
