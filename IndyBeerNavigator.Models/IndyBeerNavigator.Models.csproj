@@ -58,10 +58,18 @@
     <Compile Include="BeerModels\BeerDetail.cs" />
     <Compile Include="BeerModels\BeerEdit.cs" />
     <Compile Include="BeerModels\BeerListItem.cs" />
+    <Compile Include="BeerReviewModels\BeerReviewCreate.cs" />
+    <Compile Include="BeerReviewModels\BeerReviewDetail.cs" />
+    <Compile Include="BeerReviewModels\BeerReviewEdit.cs" />
+    <Compile Include="BeerReviewModels\BeerReviewListItem.cs" />
     <Compile Include="BreweryModels\BreweryCreate.cs" />
     <Compile Include="BreweryModels\BreweryDetail.cs" />
     <Compile Include="BreweryModels\BreweryEdit.cs" />
     <Compile Include="BreweryModels\BreweryListItem.cs" />
+    <Compile Include="BreweryReviewModels\BreweryReviewCreate.cs" />
+    <Compile Include="BreweryReviewModels\BreweryReviewDetail.cs" />
+    <Compile Include="BreweryReviewModels\BreweryReviewEdit.cs" />
+    <Compile Include="BreweryReviewModels\BreweryReviewListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SaleModels\SaleCreate.cs" />
     <Compile Include="SaleModels\SaleDetail.cs" />
@@ -78,9 +86,6 @@
       <Name>IndyBeerNavigator.Data</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BeerReviewModels\" />
-    <Folder Include="BreweryReviewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

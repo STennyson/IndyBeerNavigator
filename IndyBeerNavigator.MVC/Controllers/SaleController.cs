@@ -1,4 +1,5 @@
-﻿using IndyBeerNavigator.Models.SaleModels;
+﻿using IndyBeerNavigator.Data;
+using IndyBeerNavigator.Models.SaleModels;
 using IndyBeerNavigator.Services;
 using System;
 using System.Collections.Generic;
@@ -105,6 +106,25 @@ namespace IndyBeerNavigator.MVC.Controllers
 
             TempData["SaveResult"] = "Your sale was removed.";
             return RedirectToAction("Index");
+        }
+
+        public ActionResult GetBreweryNames()
+        {
+            ApplicationDbContext _ctx = new ApplicationDbContext();
+            List<SelectListItem> items = new List<SelectListItem>();
+
+            foreach (var brewery in _ctx.Breweries)
+            {
+                items.Add(new SelectListItem
+                {
+                    Text = brewery.Name,
+                    Value = brewery.BreweryId.ToString()
+                });
+            }
+
+            ViewBag.CategoryType = items;
+
+            return View();
         }
     }
 }

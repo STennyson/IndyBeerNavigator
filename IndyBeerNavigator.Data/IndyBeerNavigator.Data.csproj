@@ -58,6 +58,7 @@
     <Compile Include="Entities\BeerReview.cs" />
     <Compile Include="Entities\Brewery.cs" />
     <Compile Include="Entities\BreweryReview.cs" />
+    <Compile Include="Entities\Review.cs" />
     <Compile Include="Entities\Sale.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202006291522109_InitialCreate.cs" />
@@ -84,6 +85,10 @@
     <Compile Include="Migrations\202007071546565_addedPropertiesToBeer.Designer.cs">
       <DependentUpon>202007071546565_addedPropertiesToBeer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007081651372_addedReviewsAndRatings.cs" />
+    <Compile Include="Migrations\202007081651372_addedReviewsAndRatings.Designer.cs">
+      <DependentUpon>202007081651372_addedReviewsAndRatings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -109,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007071546565_addedPropertiesToBeer.resx">
       <DependentUpon>202007071546565_addedPropertiesToBeer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007081651372_addedReviewsAndRatings.resx">
+      <DependentUpon>202007081651372_addedReviewsAndRatings.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

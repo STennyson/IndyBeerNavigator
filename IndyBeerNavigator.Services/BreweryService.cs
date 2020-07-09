@@ -88,6 +88,19 @@ namespace IndyBeerNavigator.Services
             return sales;
         }
 
+        // GET (Reviews for a Brewery)
+        public List<BreweryReview> GetReviewsForBrewery(int breweryId)
+        {
+            var entity = _context.Breweries.Find(breweryId);
+
+            List<BreweryReview> revs = new List<BreweryReview>();
+            foreach (var rev in entity.BreweryReviews)
+            {
+                revs.Add(rev);
+            }
+            return revs;
+        }
+
 
         // UPDATE
         public bool UpdateBrewery(BreweryEdit model)

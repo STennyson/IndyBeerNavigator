@@ -1,8 +1,10 @@
 ﻿using IndyBeerNavigator.Data;
 using IndyBeerNavigator.Data.Entities;
+using IndyBeerNavigator.Models;
 using IndyBeerNavigator.Models.SaleModels;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -83,5 +85,17 @@ namespace IndyBeerNavigator.Services
 
                 return _context.SaveChanges() == 1;
         }
+
+        public List<BreweryListItem> GetAllBreweryNames()
+        {
+            var breweryEntities = _context.Breweries.ToList();
+            var breweryList = breweryEntities.Select(b => new BreweryListItem
+            {
+                Name = b.Name,
+            }).ToList();
+
+            return breweryList;
+        }
     }
 }
+
