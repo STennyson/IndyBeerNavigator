@@ -66,9 +66,9 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.BreweryId, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.Brewery, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.BreweryId, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.BreweryId, new SelectList(ViewBag.Breweries, "BreweryId", "Name"), "Select Brewery")
             @Html.ValidationMessageFor(model => model.BreweryId, "", new { @class = "text-danger" })
         </div>
     </div>

@@ -13,6 +13,12 @@ namespace IndyBeerNavigator.MVC.Controllers
     public class SaleController : Controller
     {
         private readonly SaleService _service = new SaleService();
+
+        private BreweryService CreateBreweryService()
+        {
+            var service = new BreweryService();
+            return service;
+        }
         // GET: Sale
         public ActionResult Index()
         {
@@ -23,6 +29,9 @@ namespace IndyBeerNavigator.MVC.Controllers
         // GET: Sale/Create
         public ActionResult Create()
         {
+            var brewServ = CreateBreweryService();
+            var getBrewery = brewServ.GetAllBreweries();
+            ViewBag.Breweries = getBrewery.ToList();
             return View();
         }
 

@@ -18,7 +18,16 @@
     <div class="form-group">
         @Html.LabelFor(model => model.DayOfTheWeek, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.DayOfTheWeek, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownList("Day of the week", new List<SelectListItem>()
+       {
+           new SelectListItem(){ Text= "Monday", Value= "1"},
+           new SelectListItem(){ Text= "Tuesday", Value= "2"},
+           new SelectListItem(){ Text= "Wednesday", Value= "3"},
+           new SelectListItem(){ Text= "Thursday", Value= "4"},
+           new SelectListItem(){ Text= "Friday", Value= "5"},
+           new SelectListItem(){ Text= "Saturday", Value= "6"},
+           new SelectListItem(){ Text= "Sunday", Value= "7"},
+       }, "Select Day")
             @Html.ValidationMessageFor(model => model.DayOfTheWeek, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -34,8 +43,8 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Brewery, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownListFor(n => n.Brewery.Name, (SelectList)ViewBag.BreweryId , "--Select One--")
-            @Html.ValidationMessageFor(model => model.Brewery, "", new { @class = "text-danger" })
+            @Html.DropDownListFor(model => model.BreweryId, new SelectList(ViewBag.Breweries, "BreweryId", "Name"), "Select Brewery")
+            @Html.ValidationMessageFor(model => model.BreweryId, "", new { @class = "text-danger" })
         </div>
     </div>
 
