@@ -72,6 +72,7 @@ namespace IndyBeerNavigator.MVC.Controllers
                     SaleId = detail.SaleId,
                     DayOfTheWeek = detail.DayOfTheWeek,
                     SalePrice = detail.SalePrice,
+                    BreweryId = detail.BreweryId
                 };
             return View(model);
         }

@@ -4,19 +4,11 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Discount Details</h2>
 
 <div>
-    <h4>SaleDetail</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.SaleId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SaleId)
-        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.DayOfTheWeek)
@@ -35,14 +27,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BreweryId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BreweryId)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Brewery)
         </dt>
 
@@ -53,6 +37,7 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Modify", "Edit", new { id = Model.SaleId}) |
+    @Html.ActionLink("Edit this Deal", "Edit", new { id = Model.SaleId}) 
+    <hr />
     @Html.ActionLink("Back to List", "Index")
 </p>

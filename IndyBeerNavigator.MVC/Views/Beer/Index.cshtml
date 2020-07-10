@@ -4,11 +4,9 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Beers</h2>
+<h2>Beers of Indianapolis</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 @if (TempData.ContainsKey("SaveResult"))
 {
     <div class="alert alert-success fade in" role="alert">
@@ -20,9 +18,6 @@
 }
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.BeerId)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
@@ -42,9 +37,6 @@
             @Html.DisplayNameFor(model => model.CannedOrBottled)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BreweryId)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Brewery)
         </th>
         <th></th>
@@ -53,9 +45,6 @@
     @foreach (var item in Model)
     {
 <tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.BeerId)
-    </td>
     <td>
         @Html.DisplayFor(modelItem => item.Name)
     </td>
@@ -74,18 +63,18 @@
     <td>
         @Html.DisplayFor(modelItem => item.CannedOrBottled)
     </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.BreweryId)
-    </td>
     <th>
         @Html.DisplayFor(modelItem => item.Brewery.Name)
     </th>
     <td>
-        @Html.ActionLink("Change", "Edit", new { id = item.BeerId }) |
-        @Html.ActionLink("Specifics", "Details", new { id = item.BeerId }) |
+        @Html.ActionLink("Edit", "Edit", new { id = item.BeerId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.BeerId }) |
         @Html.ActionLink("Remove", "Delete", new { id = item.BeerId })
     </td>
 </tr>
     }
 
 </table>
+<p>
+    @Html.ActionLink("Add a new Beer", "Create")
+</p>

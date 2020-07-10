@@ -4,11 +4,9 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Sales</h2>
+<h2>Special Deals</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 @if (TempData.ContainsKey("SaveResult"))
 {
 <div class="alert alert-success fade in" role="alert">
@@ -22,16 +20,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.SaleId)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.DayOfTheWeek)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.SalePrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BreweryId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Brewery)
@@ -43,26 +35,24 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.SaleId)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.DayOfTheWeek)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SalePrice)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.BreweryId)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Brewery.Name)
             </td>
             <td>
-                @Html.ActionLink("Modify", "Edit", new { id = item.SaleId }) |
-                @Html.ActionLink("Specifics", "Details", new { id = item.SaleId }) |
+                @Html.ActionLink("Edit", "Edit", new { id = item.SaleId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.SaleId }) |
                 @Html.ActionLink("Remove", "Delete", new { id = item.SaleId })
             </td>
         </tr>
     }
 
 </table>
+
+<p>
+    @Html.ActionLink("Add a Special Deal", "Create")
+</p>
