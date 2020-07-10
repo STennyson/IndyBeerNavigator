@@ -11,7 +11,6 @@ namespace IndyBeerNavigator.Models.BeerReviewModels
 {
     public class BeerReviewListItem
     {
-        
         public int Id { get; set; }
         public Guid OwnerId { get; set; }
         public string Rev { get; set; }

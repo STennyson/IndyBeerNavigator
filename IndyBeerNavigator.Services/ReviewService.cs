@@ -21,15 +21,18 @@ namespace IndyBeerNavigator.Services
             _userId = userId;
         }
 
-        public bool CreateBeerReview(BeerReviewCreate model)
+        //Create
+        public bool CreateBeerReview(BeerReviewCreate model, int beerId)
         {
+            var beerEntity = _context.Beers.Find(beerId);
+
             var entity = new BeerReview()
             {
                 OwnerId = _userId,
                 Rev = model.Rev,
                 Rating = model.Rating,
                 CreatedUtc = DateTimeOffset.Now,
-                BeerId = model.BeerId,
+                BeerId = beerEntity.BeerId,
                 Beer = model.Beer
             };
 
@@ -37,15 +40,17 @@ namespace IndyBeerNavigator.Services
             return _context.SaveChanges() == 1;
         }
 
-        public bool CreateBreweryReview(BreweryReviewCreate model)
+        public bool CreateBreweryReview(BreweryReviewCreate model, int breweryId)
         {
+            var breweryEntity = _context.Breweries.Find(breweryId);
+
             var entity = new BreweryReview()
             {
                 OwnerId = _userId,
                 Rev = model.Rev,
                 Rating = model.Rating,
                 CreatedUtc = DateTimeOffset.Now,
-                BreweryId = model.BreweryId,
+                BreweryId = breweryEntity.BreweryId,
                 Brewery = model.Brewery
             };
 
