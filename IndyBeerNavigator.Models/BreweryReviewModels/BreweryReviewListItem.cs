@@ -11,14 +11,10 @@ namespace IndyBeerNavigator.Models.BreweryReviewModels
 {
     public class BreweryReviewListItem
     {
-        public int Id { get; set; }
-        public Guid OwnerId { get; set; }
+        [Display(Name = "Review")]
         public string Rev { get; set; }
         public double Rating { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
-        [ForeignKey(nameof(Brewery))]
-        public int BreweryId { get; set; }
-        public virtual Brewery Brewery { get; set; }
     }
 }

@@ -7,21 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IndyBeerNavigator.Models.BreweryReviewModels
+namespace IndyBeerNavigator.Models.EventModels
 {
-    public class BreweryReviewCreate
+    public class EventCreate
     {
         [Key]
-        public int Id { get; set; }
+        public int EventId { get; set; }
         [Required]
-        public Guid OwnerId { get; set; }
+        [Display(Name = "What kind of event? Music, Comedy, Etc..")]
+        public string Type { get; set; }
         [Required]
-        [MaxLength(500, ErrorMessage = "There are too many characters in this field.")]
-        [Display(Name = "Review")]
-        public string Rev { get; set; }
+        [MaxLength(1000, ErrorMessage = "There are too many characters in this field.")]
+        public string Description { get; set; }
         [Required]
-        [Range(0, 10, ErrorMessage = "Rating must be between 0 and 10.")]
-        public double Rating { get; set; }
+        [Display(Name = "Date")]
+        public DateTime EventDate { get; set; }
         [ForeignKey(nameof(Brewery))]
         public int BreweryId { get; set; }
         public virtual Brewery Brewery { get; set; }

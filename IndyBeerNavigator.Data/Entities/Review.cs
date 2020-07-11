@@ -22,5 +22,6 @@ namespace IndyBeerNavigator.Data.Entities
         public double Rating { get; set; }
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
+        
     }
 }

@@ -58,6 +58,7 @@
     <Compile Include="Entities\BeerReview.cs" />
     <Compile Include="Entities\Brewery.cs" />
     <Compile Include="Entities\BreweryReview.cs" />
+    <Compile Include="Entities\Event.cs" />
     <Compile Include="Entities\Review.cs" />
     <Compile Include="Entities\Sale.cs" />
     <Compile Include="IdentityModels.cs" />

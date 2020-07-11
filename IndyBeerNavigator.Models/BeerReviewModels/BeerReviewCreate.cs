@@ -17,6 +17,7 @@ namespace IndyBeerNavigator.Models.BeerReviewModels
         public Guid OwnerId { get; set; }
         [Required]
         [MaxLength(500, ErrorMessage = "There are too many characters in this field.")]
+        [Display(Name = "Review")]
         public string Rev { get; set; }
         [Required]
         [Range(0, 10, ErrorMessage = "Rating must be between 0 and 10.")]

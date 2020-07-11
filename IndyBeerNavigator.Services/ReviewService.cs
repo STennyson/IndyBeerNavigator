@@ -21,7 +21,8 @@ namespace IndyBeerNavigator.Services
             _userId = userId;
         }
 
-        //Create
+
+        //Create beer review
         public bool CreateBeerReview(BeerReviewCreate model, int beerId)
         {
             var beerEntity = _context.Beers.Find(beerId);
@@ -39,7 +40,7 @@ namespace IndyBeerNavigator.Services
             _context.BeerReviews.Add(entity);
             return _context.SaveChanges() == 1;
         }
-
+        //Create brewery review
         public bool CreateBreweryReview(BreweryReviewCreate model, int breweryId)
         {
             var breweryEntity = _context.Breweries.Find(breweryId);
