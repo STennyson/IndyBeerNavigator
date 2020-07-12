@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div id="calendar"></div>
+
+    <link href='fullcalendar/main.css' rel='stylesheet' />
+    @section scripts{
+<script src='fullcalendar/main.js'></script>
+       
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth'
+            });
+            calendar.render();
+        });
+
+    </script>
+        }
+<body>
+    <div id='calendar'></div>
+</body>
+

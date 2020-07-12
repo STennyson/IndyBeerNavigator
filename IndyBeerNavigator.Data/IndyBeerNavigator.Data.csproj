@@ -90,6 +90,10 @@
     <Compile Include="Migrations\202007081651372_addedReviewsAndRatings.Designer.cs">
       <DependentUpon>202007081651372_addedReviewsAndRatings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007120023144_eventAndReviewMigration.cs" />
+    <Compile Include="Migrations\202007120023144_eventAndReviewMigration.Designer.cs">
+      <DependentUpon>202007120023144_eventAndReviewMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -118,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007081651372_addedReviewsAndRatings.resx">
       <DependentUpon>202007081651372_addedReviewsAndRatings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007120023144_eventAndReviewMigration.resx">
+      <DependentUpon>202007120023144_eventAndReviewMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

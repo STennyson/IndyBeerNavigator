@@ -258,10 +258,10 @@
     <Content Include="Views\Brewery\SaleList.cshtml" />
     <Content Include="Views\Beer\Reviews.cshtml" />
     <Content Include="Views\Brewery\Reviews.cshtml" />
+    <Content Include="Views\Event\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Event\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
