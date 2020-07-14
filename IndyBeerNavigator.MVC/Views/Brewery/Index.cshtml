@@ -3,56 +3,67 @@
 @{
     ViewBag.Title = "Index";
 }
-<body style=" background-color:darkgoldenrod;
-">
+    <body style="      background: url(https://images.unsplash.com/photo-1528823872057-9c018a7a7553?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+        background-size: cover;
+        background-repeat: no-repeat;
+    ">
 
-<h2>Breweries in the Indianapolis Area</h2>
+        <h2 style="color:darkgoldenrod; text-decoration:underline; text-shadow: 2px 2px black; text-align: center; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 4rem;">Breweries in the Indianapolis Area</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert alert-success fade in" role="alert">
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-        @TempData["SaveResult"]
-    </div>
-}
-    <table class="table" style="backface-visibility: visible;">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Carryout)
-            </th>
-            <th></th>
-        </tr>
 
-        @foreach (var item in Model)
+        @if (TempData.ContainsKey("SaveResult"))
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Address)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Carryout)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.BreweryId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.BreweryId }) |
-                    @Html.ActionLink("Remove", "Delete", new { id = item.BreweryId })
-                </td>
-            </tr>
+            <div class="alert alert-success fade in" role="alert">
+                <button type="button" class="close" data-dismiss="alert">
+                    <span>&times;</span>
+                </button>
+                @TempData["SaveResult"]
+            </div>
         }
+        <table class="table" style="border:3px double black; text-align:center;">
+            <tr style="background-color:black; color:antiquewhite; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:2rem;">
+                <th style="text-align:center;">
+                    Name
+                </th>
+                <th>
+                    Address
+                </th>
+                <th>
+                    Carryout Options
+                </th>
+                <th>
+                    Controls
+                </th>
+            </tr>
 
-    </table>
+            @foreach (var item in Model)
+            {
+                <tr style="background-color:antiquewhite; color:black; border-bottom:2px double black; font-family:'Times New Roman', Times, serif; font-size: 2rem;">
+                    <td style=" border: 1px dashed black;">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td style=" border: 1px dashed black;">
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td style=" border: 1px dashed black;">
+                        @Html.DisplayFor(modelItem => item.Carryout)
+                    </td>
+                    <td style="text-align:center; border: 1px dashed black;">
+                        <button class="btn btn-warning">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.BreweryId }, new { style = "color:white" })
+                        </button>
+                        <button class="btn btn-info">
+                            @Html.ActionLink("Details", "Details", new { id = item.BreweryId }, new { style = "color:white" })
+                        </button>
+                        <button class="btn btn-danger">
+                            @Html.ActionLink("Remove", "Delete", new { id = item.BreweryId }, new { style = "color:white" })
+                        </button>
+                    </td>
+                </tr>
+            }
+
+        </table>
+        <button class="btn btn-primary">
+            @Html.ActionLink("Create New", "Create", "", new { style = "color:white" })
+        </button>
     </body>
