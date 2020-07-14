@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="color:antiquewhite;">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -19,22 +19,22 @@
                 </button>
                 @Html.ActionLink("IndyBeerNavigator", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:18px;">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Breweries", "Index", "Brewery")</li>
                     <li>@Html.ActionLink("Beers", "Index", "Beer")</li>
-                    <li>@Html.ActionLink("Sales", "Index", "Sale")</li>
+                    <li>@Html.ActionLink("Specials", "Index", "Sale")</li>
+                    <li>@Html.ActionLink("Events", "Index", "Event")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container body-content" style="background-color:darkgoldenrod;">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Seth Tennyson</p>
+            <p>&copy; 2020 - Seth Tennyson</p>
         </footer>
     </div>
 

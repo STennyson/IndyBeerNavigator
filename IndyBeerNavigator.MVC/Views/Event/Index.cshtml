@@ -1,28 +1,51 @@
-﻿
+﻿@model IEnumerable<IndyBeerNavigator.Models.EventModels.EventListItem>
+
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
-<div id="calendar"></div>
 
-    <link href='fullcalendar/main.css' rel='stylesheet' />
-    @section scripts{
-<script src='fullcalendar/main.js'></script>
-       
-    <script>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brewery)
+        </th>
+        <th></th>
+    </tr>
 
-        document.addEventListener('DOMContentLoaded', function () {
-            var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth'
-            });
-            calendar.render();
-        });
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventDate, "{0:g}")
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brewery.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.EventId}) |
+            @Html.ActionLink("Details", "Details", new { id = item.EventId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.EventId })
+        </td>
+    </tr>
+}
 
-    </script>
-        }
-<body>
-    <div id='calendar'></div>
-</body>
-
+</table>

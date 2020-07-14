@@ -3,8 +3,10 @@
 @{
     ViewBag.Title = "Index";
 }
+<body style=" background-color:darkgoldenrod;
+">
 
-<h2>Breweries</h2>
+<h2>Breweries in the Indianapolis Area</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -18,11 +20,8 @@
         @TempData["SaveResult"]
     </div>
 }
-    <table class="table">
+    <table class="table" style="backface-visibility: visible;">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.BreweryId)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -39,9 +38,6 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.BreweryId)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
@@ -51,11 +47,12 @@
                     @Html.DisplayFor(modelItem => item.Carryout)
                 </td>
                 <td>
-                    @Html.ActionLink("Change", "Edit", new { id = item.BreweryId }) |
-                    @Html.ActionLink("Specifics", "Details", new { id = item.BreweryId }) |
+                    @Html.ActionLink("Edit", "Edit", new { id = item.BreweryId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.BreweryId }) |
                     @Html.ActionLink("Remove", "Delete", new { id = item.BreweryId })
                 </td>
             </tr>
         }
 
     </table>
+    </body>

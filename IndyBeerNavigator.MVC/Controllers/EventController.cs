@@ -1,4 +1,6 @@
-﻿using IndyBeerNavigator.Models.EventModels;
+﻿using IndyBeerNavigator.Data;
+using IndyBeerNavigator.Data.Entities;
+using IndyBeerNavigator.Models.EventModels;
 using IndyBeerNavigator.Services;
 using System;
 using System.Collections.Generic;
@@ -20,7 +22,17 @@ namespace IndyBeerNavigator.MVC.Controllers
         // GET: Event
         public ActionResult Index()
         {
-            return View();
+            var model = _service.GetAllEvents();
+            return View(model);
+        }
+
+        public JsonResult GetEvents()
+        {
+            using (ApplicationDbContext db = new ApplicationDbContext())
+            {
+                var events = db.Events.ToList();
+                return new JsonResult { Data = events, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            }
         }
 
         // GET: Event/Create
@@ -44,11 +56,11 @@ namespace IndyBeerNavigator.MVC.Controllers
 
             if (_service.CreateEvent(model))
             {
-                TempData["SaveResult"] = "Beer was added.";
+                TempData["SaveResult"] = "Event was added.";
                 return RedirectToAction("Index");
             };
 
-            ModelState.AddModelError("", "Beer could not be created.");
+            ModelState.AddModelError("", "Event could not be created.");
             return View(model);
         }
 

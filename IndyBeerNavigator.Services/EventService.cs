@@ -31,7 +31,7 @@ namespace IndyBeerNavigator.Services
         }
 
         // GET ALL
-        public List<EventListItem> GetAllBeers()
+        public List<EventListItem> GetAllEvents()
         {
             var eventEntities = _context.Events.ToList();
             var eventList = eventEntities.Select(b => new EventListItem

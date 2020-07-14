@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+<div id='calendar'></div>
+
+<link href="fullcalendar/main.css" rel="stylesheet" media="print" />
+@section scripts{
+<script src="fullcalendar/main.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="fullcalendar.js"></script>
+
+<script>
+
+    $(document).ready(function() {
+
+        $.ajax({
+            type: "GET",
+            url: "/event/index",
+            success: function (data) {
+                $.each(data, function (i, v) {
+                    events.push({
+                        title: v.Type,
+                        description: v.Description,
+                        start: moment(v.EventDate),
+                        color: v.ThemeColor,
+                    });
+                })
+
+                GenerateCalendar(events);
+            },
+            error: function (error) {
+                alert('failed');
+            }
+        })
+        function GenerateCalendar(events) {
+
+            $('#calendar').fullCalendar('destroy');
+            $('#calendar').fullCalendar({
+                contentHeight: 400,
+                defaultDate: new Date(),
+                timeFormat: 'h(:mm)a',
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,basicweek,basicDay,agenda'
+                },
+                eventLimit: true,
+                eventColor: '#378006',
+                events: events
+            })
+        }
+
+    })
+</script>
+    }
+
+

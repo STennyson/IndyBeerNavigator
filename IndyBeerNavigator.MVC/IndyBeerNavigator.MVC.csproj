@@ -258,7 +258,12 @@
     <Content Include="Views\Brewery\SaleList.cshtml" />
     <Content Include="Views\Beer\Reviews.cshtml" />
     <Content Include="Views\Brewery\Reviews.cshtml" />
+    <Content Include="Views\Event\IndexCalendar.cshtml" />
+    <Content Include="Views\Event\Create.cshtml" />
     <Content Include="Views\Event\Index.cshtml" />
+    <Content Include="Views\Event\Details.cshtml" />
+    <Content Include="Views\Event\Edit.cshtml" />
+    <Content Include="Views\Event\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

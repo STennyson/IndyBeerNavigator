@@ -20,6 +20,7 @@ namespace IndyBeerNavigator.Data.Entities
         [MaxLength(1000, ErrorMessage = "There are too many characters in this field.")]
         public string Description { get; set; }
         [Required]
+        [DataType(DataType.DateTime)]
         [Display(Name = "Date")]
         public DateTime EventDate { get; set; }
         [ForeignKey(nameof(Brewery))]

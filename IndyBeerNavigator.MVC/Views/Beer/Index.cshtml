@@ -1,12 +1,23 @@
 ﻿@model IEnumerable<IndyBeerNavigator.Models.BeerModels.BeerListItem>
-
+<style>
+    html {
+        background-image: url("https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60");
+        object-fit: cover;
+        background-repeat: no-repeat;
+    }
+</style>
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Beers of Indianapolis</h2>
 
-
+<style>
+    html {
+        background-image: url("https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60");
+        object-fit: cover;
+    }
+</style>
 @if (TempData.ContainsKey("SaveResult"))
 {
     <div class="alert alert-success fade in" role="alert">
@@ -16,6 +27,7 @@
         @TempData["SaveResult"]
     </div>
 }
+
 <table class="table">
     <tr>
         <th>
@@ -44,34 +56,34 @@
 
     @foreach (var item in Model)
     {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Name)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Style)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ABV)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.IBUs)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.SRM)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.CannedOrBottled)
-    </td>
-    <th>
-        @Html.DisplayFor(modelItem => item.Brewery.Name)
-    </th>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.BeerId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.BeerId }) |
-        @Html.ActionLink("Remove", "Delete", new { id = item.BeerId })
-    </td>
-</tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Style)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ABV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IBUs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SRM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CannedOrBottled)
+            </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.Brewery.Name)
+            </th>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.BeerId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.BeerId }) |
+                @Html.ActionLink("Remove", "Delete", new { id = item.BeerId })
+            </td>
+        </tr>
     }
 
 </table>

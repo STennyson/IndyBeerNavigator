@@ -2,33 +2,35 @@
     ViewBag.Title = "Home Page";
 }
 
-    
+<body style="background-color:darkgoldenrod;">
+<div style="background-color:darkgoldenrod;">
 
-
-        <div class="jumbotron" style="        background-image: url('https://images.unsplash.com/photo-1570039486851-9caa462a2cd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80');
+    <div class="jumbotron" style="background-image: url('https://images.unsplash.com/photo-1570039486851-9caa462a2cd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80');
         object-fit: cover">
-            >
-            <h1 color="white">Welcome to the IndyBeerNavigator!</h1>
-            <p class="lead">IndyBeerNavigator is a tool to help you find information and write reviews about the breweries in Indianapolis.</p>
-            <p><a href="blank" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        >
+        <h1 style="margin-top:-2rem; color:darkgoldenrod; text-shadow:3px 3px black; text-align:center; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:72px;">Welcome to the IndyBeerNavigator!</h1>
+        <p class="lead" style="color: antiquewhite; text-shadow: 2px 2px black; text-align: center; font-family:'Times New Roman', Times, serif;">IndyBeerNavigator is a tool to help you find information about the breweries in the greater Indianapolis area.</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4" style="text-align:center; border-right:2px solid black">
+            <h2 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-top:-.5rem;"><b><u>Breweries</u></b></h2>
+            <p style="font-family:'Times New Roman', Times, serif; font-size: 16px;">
+                Explore the many breweries our great metropolis has to offer.
+            </p>
+            <p><a class="btn btn-default" href="https://localhost:44318/Brewery">See the Breweries &raquo;</a></p>
         </div>
-        
-            <div class="row">
-                <div class="col-md-4">
-                    <h2>Breweries</h2>
-                    <p>
-                        Explore the many breweries our great city has to offer.
-                    </p>
-                    <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-                </div>
-                <div class="col-md-4">
-                    <h2>Beers</h2>
-                    <p>Check out the many different delicious beers you can taste.</p>
-                    <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-                </div>
-                <div class="col-md-4">
-                    <h2>Sales</h2>
-                    <p>Find daily and weekly beer sales around the city for the thrifty connoisseur.</p>
-                    <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-                </div>
-            </div>
+        <div class="col-md-4" style="text-align:center; border-right:2px solid black">
+            <h2 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-top:-.5rem;"><b><u>Beers</u></b></h2>
+            <p style="font-family: 'Times New Roman', Times, serif; font-size: 16px;">Check out the many different delicious beers you can taste.</p>
+            <p><a class="btn btn-default" href="https://localhost:44318/Beer">See the Beers &raquo;</a></p>
+        </div>
+        <div class="col-md-4" style="text-align:center;">
+            <h2 style="        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-top: -.5rem;"><b><u>Specials</u></b></h2>
+            <p style="font-family:'Times New Roman', Times, serif; font-size: 16px;">Find daily and weekly beer sales around the city for the thrifty connoisseur.</p>
+            <p><a class="btn btn-default" href="https://localhost:44318/Beer">Find Specials &raquo;</a></p>
+        </div>
+    </div>
+</div>
+    </body>
