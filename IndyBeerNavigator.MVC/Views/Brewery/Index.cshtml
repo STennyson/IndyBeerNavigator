@@ -8,7 +8,12 @@
         background-repeat: no-repeat;
     ">
 
-        <h2 style="color:darkgoldenrod; text-decoration:underline; text-shadow: 2px 2px black; text-align: center; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 4rem;">Breweries in the Indianapolis Area</h2>
+        <h2 style="        color: #A5AE9E;
+        text-decoration: underline;
+        text-shadow: 2px 2px #2F2504;
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 4rem;">Breweries in the Indianapolis Area</h2>
 
 
         @if (TempData.ContainsKey("SaveResult"))
@@ -21,24 +26,24 @@
             </div>
         }
         <table class="table" style="border:3px double black; text-align:center;">
-            <tr style="background-color:black; color:antiquewhite; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:2rem;">
+            <tr style="background-color: #2F2504; color: #A5AE9E; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:2rem;">
                 <th style="text-align:center;">
                     Name
                 </th>
-                <th>
+                <th style="text-align:center;">
                     Address
                 </th>
-                <th>
+                <th style="text-align: center; ">
                     Carryout Options
                 </th>
-                <th>
+                <th style="text-align:center;">
                     Controls
                 </th>
             </tr>
 
             @foreach (var item in Model)
             {
-                <tr style="background-color:antiquewhite; color:black; border-bottom:2px double black; font-family:'Times New Roman', Times, serif; font-size: 2rem;">
+                <tr style="background-color: #A5AE9E; color: #2F2504; border-bottom:2px double black; font-family:'Times New Roman', Times, serif; font-size: 2rem;">
                     <td style=" border: 1px dashed black;">
                         @Html.DisplayFor(modelItem => item.Name)
                     </td>
@@ -48,7 +53,9 @@
                     <td style=" border: 1px dashed black;">
                         @Html.DisplayFor(modelItem => item.Carryout)
                     </td>
-                    <td style="text-align:center; border: 1px dashed black;">
+                    <td style="text-align: center;
+        border: 1px dashed black;
+    ">
                         <button class="btn btn-warning">
                             @Html.ActionLink("Edit", "Edit", new { id = item.BreweryId }, new { style = "color:white" })
                         </button>
@@ -63,7 +70,7 @@
             }
 
         </table>
-        <button class="btn btn-primary">
+        <button class="btn btn-primary" >
             @Html.ActionLink("Create New", "Create", "", new { style = "color:white" })
         </button>
     </body>
