@@ -7,18 +7,23 @@
         background-size: cover;
         background-repeat: no-repeat;
     ">
-        <h2 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:3rem; text-align:center; text-shadow: 2px 2px #2F2504; color: #A5AE9E;">Modify This Brewery</h2>
+        <h2 style=" text-shadow: 2px 2px #2F2504; color: #A5AE9E;       
+        text-decoration: underline;
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 4rem;">Modify This Brewery</h2>
 
-        <div style="        background-color: #A5AE9E;
-        color: #2F2504;
-        border: 3px ridge #2F2504;
-        border-radius: 20%;
-        margin-top: 20px;">
+        <div style="        color: #2F2504;
+        text-shadow: 2px 2px #A5AE9E;
+        margin-top: 20px;
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 2rem;">
             @using (Html.BeginForm())
             {
                 @Html.AntiForgeryToken()
 
-                <div class="form-horizontal" style="margin:10px 10px 10px 300px;">
+                <div class="form-horizontal" style="margin:30px 10px 10px 300px;">
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     @Html.HiddenFor(model => model.BreweryId)
 
@@ -47,20 +52,18 @@
                     </div>
 
                     <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
+                        <div class="col-md-10" style="margin-left:-60px;">
                             <input type="submit" value="Save" class="btn btn-success" />
                         </div>
                     </div>
                 </div>
             }
             </div>
-            <div style="        font-size: 1.5rem;
-        background-color: black;
-        text-align: center;">
-                @Html.ActionLink("Back to List", "Index", "", new { style = "color:white" })
-            </div>
+        <button style="background-color:#2F2504; text-align:center;">
+            @Html.ActionLink("Back to List", "Index", "", new { style = "color:#EC9A29" })
+            </button>
 
-    </body>
+</body>
 
         @section Scripts {
             @Scripts.Render("~/bundles/jqueryval")

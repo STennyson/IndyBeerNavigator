@@ -3,53 +3,67 @@
 @{
     ViewBag.Title = "Create";
 }
+    <body style="        background-image: url(https://images.unsplash.com/photo-1504502350688-00f5d59bbdeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60);
+        background-size: cover;
+        background-repeat: no-repeat;
+    ">
 
-<h2>Add a New Special</h2>
+        <h2 style="        color: #698F3F;
+        text-decoration: underline;
+        text-shadow: 2px 2px #0A122A;
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 4rem;">Add a New Special</h2>
 
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-<div class="form-horizontal">
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(model => model.DayOfTheWeek, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.DayOfTheWeek, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.DayOfTheWeek, "", new { @class = "text-danger" })
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal" style="        margin-top: 20px;
+        text-align: center;
+        text-shadow: 1px 1px #0A122A;
+        color: #698F3F;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 2rem;
+">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group" style="margin:10px 10px 10px 300px;">
+                    @Html.LabelFor(model => model.DayOfTheWeek, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-6" >
+                        @Html.EditorFor(model => model.DayOfTheWeek, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.DayOfTheWeek, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin:10px 10px 10px 300px;">
+                    @Html.LabelFor(model => model.SalePrice, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-6">
+                        @Html.EditorFor(model => model.SalePrice, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SalePrice, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin:10px 10px 10px 300px;">
+                    @Html.LabelFor(model => model.Brewery, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-6"  style="color:black; margin-left:-200px;">
+                        @Html.DropDownListFor(model => model.BreweryId, new SelectList(ViewBag.Breweries, "BreweryId", "Name"), "Select Brewery")
+                        @Html.ValidationMessageFor(model => model.BreweryId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin:10px 10px 10px -175px; ">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-success" />
+                    </div>
+                </div>
+            </div>
+        }
+        <hr />
+        <div> <button style="background-color:#0A122A; text-align:center;">
+            @Html.ActionLink("Back to List", "Index", "", new { style = "color:#698F3F" })</button>
         </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.SalePrice, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.SalePrice, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.SalePrice, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Brewery, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownListFor(model => model.BreweryId, new SelectList(ViewBag.Breweries, "BreweryId", "Name"), "Select Brewery")
-            @Html.ValidationMessageFor(model => model.BreweryId, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-success" />
-        </div>
-    </div>
-</div>
-}
-<hr />
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+        </body>
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }

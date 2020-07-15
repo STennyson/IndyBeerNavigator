@@ -13,51 +13,50 @@
         <div style="        background-color: #A5AE9E;
         color: #2F2504;
         border: 3px ridge #2F2504;
-        border-radius: 20%;
         margin-top: 50px;">
             <h3 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:3rem; font-weight:bold;">Brewery Specifics</h3>
             <hr />
-            <dl class="dl-horizontal" style="font-size: 2.3rem; font-family: 'Times New Roman', Times, serif; display:inline-block; ">
+            <dl  style="font-size: 2.3rem; font-family: 'Times New Roman', Times, serif; display:inline-block; ">
                
-                <dt style="width: 240px;">
+                <dt style="">
                     @Html.DisplayNameFor(model => model.Name):
                 </dt>
 
-                <dd style="width: 240px;">
+                <dd style="">
                     @Html.DisplayFor(model => model.Name)
                 </dd>
 
-                <dt style="width: 240px;">
+                <dt style="">
                     @Html.DisplayNameFor(model => model.Address):
                 </dt>
 
-                <dd style="width: 240px;">
+                <dd style="">
                     @Html.DisplayFor(model => model.Address)
                 </dd>
 
-                <dt  style="width: 240px;">
+                <dt  style="">
                     @Html.DisplayNameFor(model => model.Carryout):
                 </dt>
 
-                <dd style="width: 240px;">
+                <dd style="">
                     @Html.DisplayFor(model => model.Carryout)
                 </dd>
             </dl>
 
-            <dl style="font-size: 2rem; font-style:oblique;">
+            <dl style="font-size: 2rem; font-style:oblique; margin-top:2rem;">
                 <dt>
-                    @Html.ActionLink("See Beers from this Brewery", "BeerList", new { id = Model.BreweryId }, new { style = "color:brown" })
+                    @Html.ActionLink("See Beers from this Brewery", "BeerList", new { id = Model.BreweryId }, new { style = "color:#3C493F" })
                 </dt>
-
+               
                 <dt>
-                    @Html.ActionLink("See Specials for this Brewery", "SaleList", new { id = Model.BreweryId }, new { style = "color:brown" })
+                    @Html.ActionLink("See Specials for this Brewery", "SaleList", new { id = Model.BreweryId }, new { style = "color:#3C493F" })
                 </dt>
 
             </dl>
         </div>
         <p>
-            <button class="btn btn-warning"> @Html.ActionLink("Edit this Brewery", "Edit", new { id = Model.BreweryId }, new { style = "color:white" })</button> |
-            <button class="btn btn-danger"> @Html.ActionLink("Remove this Brewery", "Delete", new { id = Model.BreweryId }, new { style = "color:white" })</button> |
-            <button class="btn btn-info"> @Html.ActionLink("Back to List", "Index", "", new { style = "color:white" })</button>
+            <button style="background-color:#2F2504"> @Html.ActionLink("Edit this Brewery", "Edit", new { id = Model.BreweryId }, new { style = "color:#EC9A29" })</button> |
+            <button style="background-color:#2F2504"> @Html.ActionLink("Remove this Brewery", "Delete", new { id = Model.BreweryId }, new { style = "color:#EC9A29" })</button> |
+            <button style="background-color:#2F2504"> @Html.ActionLink("Back to List", "Index", "", new { style = "color:#EC9A29" })</button>
         </p>
         </body>
