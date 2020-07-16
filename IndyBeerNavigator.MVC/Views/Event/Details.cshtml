@@ -3,48 +3,71 @@
 @{
     ViewBag.Title = "Details";
 }
+    <body style="        background-image: url(https://images.unsplash.com/photo-1490109875367-0dbd3c96fa1c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60);
+        background-size: cover;
+        background-repeat: no-repeat;
+">
+        <h2 style="        color: #727072;
+        text-decoration: underline;
+        text-shadow: 2px 2px #104547;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 4rem;">
+            Event Details
+        </h2>
+        <div style="        color: #AF929D;
+        text-shadow: 1.5px 1.5px #104547;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 2rem;">
+            
+                <dl >
 
-<h2>Event Details</h2>
+                    <dt>
+                        <u>
+                            Type of Event:
+                        </u>
+                    </dt>
 
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        
-        <dt>
-            @Html.DisplayNameFor(model => model.Type)
-        </dt>
+                    <dd style="color:#727072; text-shadow: 1px 1px #4B5358;">
+                        @Html.DisplayFor(model => model.Type)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Type)
-        </dd>
+                    <dt>
+                        <u>
+                            Details:
+                        </u>
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+                    <dd style="color:#727072; text-shadow: 1px 1px #4B5358;">
+                        @Html.DisplayFor(model => model.Description)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+                    <dt>
+                        <u>
+                            Date:
+                        </u>
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EventDate)
-        </dt>
+                    <dd style="color:#727072; text-shadow: 1px 1px #4B5358;">
+                        @Html.DisplayFor(model => model.EventDate)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.EventDate)
-        </dd>
+                    <dt>
+                        <u>
+                            Brewery:
+                        </u>
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Brewery.Name)
-        </dt>
+                    <dd style="color:#727072; text-shadow: 1px 1px #4B5358;">
+                        @Html.DisplayFor(model => model.Brewery.Name)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Brewery.Name)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.EventId }) |
-    @Html.ActionLink("Back to List", "Index")
+                </dl>
+            </div>
+            <p><button style="background-color:#104547;">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EventId }, new { style = "color:#AF929D" }) 
+                </button>
+    <button style="background-color:#104547;">
+        @Html.ActionLink("Back to List", "Index", "", new { style = "color:#AF929D" })
+        </button>
 </p>
+            </body>

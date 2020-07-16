@@ -3,49 +3,71 @@
 @{
     ViewBag.Title = "Index";
 }
+    <body style="        background-image: url(https://images.unsplash.com/photo-1490109875367-0dbd3c96fa1c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60);
+        background-size: cover;
+        background-repeat: no-repeat;
+">
+        <h2 style="        color: #727072;
+        text-decoration: underline;
+        text-shadow: 2px 2px #104547;
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 4rem;">
+            Events at area Breweries
+        </h2>
 
-<h2>Index</h2>
+        @if (TempData.ContainsKey("SaveResult"))
+        {
+            <div class="alert alert-success fade in" role="alert">
+                <button type="button" class="close" data-dismiss="alert">
+                    <span>&times;</span>
+                </button>
+                @TempData["SaveResult"]
+            </div>
+        }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EventDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Brewery)
-        </th>
-        <th></th>
-    </tr>
+        <table class="table" style="border:3px double black; text-align:center;">
+            <tr style="background-color: #727072; color: #104547; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:2rem;">
+                <th style="text-align:center;">
+                    Type of Event
+                </th>
+                <th style="text-align:center;">
+                    Details
+                </th>
+                <th style="text-align:center;">
+                    Date
+                </th>
+                <th style="text-align:center;">
+                    Brewery
+                </th>
+                <th></th>
+            </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EventDate, "{0:g}")
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brewery.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.EventId}) |
-            @Html.ActionLink("Details", "Details", new { id = item.EventId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.EventId })
-        </td>
-    </tr>
-}
+            @foreach (var item in Model)
+            {
+                <tr style="background-color: #104547; color: #AF929D; border-bottom:2px double black; font-family:'Times New Roman', Times, serif; font-size: 2rem;">
+                    <td style=" border: 1px dashed black;">
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+                    <td style=" border: 1px dashed black;">
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td style=" border: 1px dashed black;">
+                        @Html.DisplayFor(modelItem => item.EventDate, "", "", "{0:g}")
+                    </td>
+                    <td style=" border: 1px dashed black;">
+                        @Html.DisplayFor(modelItem => item.Brewery.Name)
+                    </td>
+                    <td style=" border: 1px dashed black;">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.EventId }, new { style = "color:#0A122A" }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.EventId }, new { style = "color:#0A122A" }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.EventId }, new { style = "color:#0A122A" })
+                    </td>
+                </tr>
+            }
 
-</table>
+        </table>
+        <button style="background-color:#0A122A; text-align:center;">
+            @Html.ActionLink("Create New", "Create", "", new { style = "color:#AF929D" })
+        </button>
+    </body>
